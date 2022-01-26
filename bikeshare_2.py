@@ -21,7 +21,7 @@ def get_filters():
 
 
     # get user input for month (all, january, february, ... , june)
-    
+
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
 
@@ -41,6 +41,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
+
 
 
     return df
