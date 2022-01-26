@@ -150,14 +150,24 @@ def user_stats(df):
     start_time = time.time()
 
     # Display counts of user types
-
-
+    counts_of_user_types=df['User Type'].value_counts()
+    print("Subscriber Counts : {} ".format(counts_of_user_types['Subscriber']))
+    print("Customer   Counts : {} ".format(counts_of_user_types['Customer']))
     # Display counts of gender
-
+    try:
+        counts_of_gender=df['Gender'].value_counts() # type of pandas Series
+        print("Male   Counts : {} ".format(counts_of_gender['Male']))
+        print("Female Counts : {} ".format(counts_of_gender['Female']))
 
     # Display earliest, most recent, and most common year of birth
-
-
+        earliest_year_of_birth=df['Birth Year'].min()
+        most_recent_year_of_birth=df['Birth Year'].max()
+        most_common_year_of_birth=df['Birth Year'].mode()[0]
+        print("Earliest Year Of Birth is : {}".format(str(earliest_year_of_birth)))
+        print("Most Recent Year Of Birth is : {}".format(str(most_recent_year_of_birth)))
+        print("Most Common Year Of Birth is : {}".format(str(most_common_year_of_birth)))
+    except:
+        print("Gender and Birth Year are not available for this City ")
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
